@@ -32,10 +32,8 @@ const Login = () => {
             })
             .catch(error => {
                 swal("Oops!!", `${error.message}`, "error");
-            })
-
-        // console.log(email, password);
-    }
+            });
+    };
     return (
         <div>
             <div className="bg-sky-100">

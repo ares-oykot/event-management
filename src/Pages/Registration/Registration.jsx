@@ -43,7 +43,7 @@ const Registration = () => {
     }
     return (
         <div className="bg-sky-100">
-            <div className="w-1/2 mx-auto shadow-lg">
+            <div className="w-1/2 mx-auto shadow-xl">
                 <img src={loginBanner} alt="" />
                 <form onSubmit={handleSignUp} className="px-8 card-body">
                     <div className="flex items-center justify-between">

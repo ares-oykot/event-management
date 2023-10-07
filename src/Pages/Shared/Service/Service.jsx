@@ -1,9 +1,10 @@
 import { PiCurrencyDollarBold } from 'react-icons/pi';
+import { Link } from "react-router-dom";
 const Service = ({ service }) => {
     const { id, title, image, price, short_description } = service || {};
     return (
         <div>
-            <div className="p-6 rounded-md bg-white h-full flex flex-col justify-around">
+            <div className="p-6 rounded-md bg-sky-200 h-full flex flex-col justify-around shadow-xl">
                 <div className="">
                     <img className="w-full h-[220px] rounded-md" src={image} alt="" />
                 </div>
@@ -19,12 +20,14 @@ const Service = ({ service }) => {
                         </div>
                     </div>
                 </div>
-                <button
-                    // onClick={() => handleSelect(card)}
-                    className="w-full text-white py-[2px] md:py-1 lg:py-2 text-[7px] md:text-[8px] lg:text-base rounded-sm  md:rounded lg:rounded-md md:mt-1 lg:mt-2 bg-[#2F80ED] hover:bg-[#3445ff] duration-200"
-                >
-                    Details
-                </button>
+                <Link to={`/details/${id}`}>
+                    <button
+
+                        className="w-full text-white py-[2px] md:py-1 lg:py-2 text-[7px] md:text-[8px] lg:text-base rounded-sm  md:rounded lg:rounded-md md:mt-1 lg:mt-2 bg-[#2F80ED] hover:bg-[#3445ff] duration-200"
+                    >
+                        Details
+                    </button>
+                </Link>
             </div>
         </div>
     );

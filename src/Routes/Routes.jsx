@@ -3,6 +3,8 @@ import Root from "../Layouts/Root";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
+import CardDetails from "../Pages/CardDetails/CardDetails";
+import PrivetRoute from "./PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -19,8 +21,13 @@ const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path: "registration",
+                path: "/registration",
                 element: <Registration></Registration>
+            },
+            {
+                path: "/details/:id",
+                element: <PrivetRoute><CardDetails></CardDetails></PrivetRoute>,
+                loader: () => fetch("/fakeData.json")
             }
         ]
     }
