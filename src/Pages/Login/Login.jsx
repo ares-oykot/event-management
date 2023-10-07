@@ -6,14 +6,34 @@ import twitter from "../../assets/twitter.png"
 import github from "../../assets/github.png"
 import { useState } from 'react';
 import { Link } from "react-router-dom";
+import swal from 'sweetalert';
+
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        if (password.length < 6) {
+            swal("Oops!!", "Password should be at least 6 characters", "error");
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            swal("Oops!!", "Your password should have at last one upper case characters", "error");
+            return;
+        }
+
+
+
+        console.log(email, password);
+    }
     return (
         <div>
             <div className="bg-sky-100">
                 <div className="w-1/2 mx-auto shadow-lg">
                     <img src={loginBanner} alt="" />
-                    <form className="px-8 card-body">
+                    <form onSubmit={handleLogin} className="px-8 card-body">
                         <div className="flex items-center justify-between">
                             <div className="text-3xl font-medium">Sign In</div>
                             <div className="flex gap-5">

@@ -21,7 +21,7 @@ const Service = ({ service }) => {
                 </div>
                 <button
                     // onClick={() => handleSelect(card)}
-                    className="w-full text-white py-[2px] md:py-1 lg:py-2 text-[7px] md:text-[8px] lg:text-base rounded-sm  md:rounded lg:rounded-md md:mt-1 lg:mt-2 bg-[#2F80ED] hover:bg-[#3445ff]"
+                    className="w-full text-white py-[2px] md:py-1 lg:py-2 text-[7px] md:text-[8px] lg:text-base rounded-sm  md:rounded lg:rounded-md md:mt-1 lg:mt-2 bg-[#2F80ED] hover:bg-[#3445ff] duration-200"
                 >
                     Details
                 </button>
