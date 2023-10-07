@@ -12,7 +12,7 @@ import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const { createUser, googleSignIn } = useContext(AuthContext);
+    const { createUser, googleSignIn, githubLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -65,7 +65,17 @@ const Registration = () => {
             .catch(error => {
                 swal("Oops!!", `${error.message}`, "error");
             });
-    }
+    };
+    const handleGithubSignUp = () => {
+        githubLogin()
+            .then(() => {
+                swal("Nice!!", "User registration is successful", "success");
+                navigate("/");
+            })
+            .catch(error => {
+                swal("Oops!!", `${error.message}`, "error");
+            });
+    };
     return (
         <div className="bg-sky-100">
             <div className="w-1/2 mx-auto shadow-xl">
@@ -77,7 +87,7 @@ const Registration = () => {
                             <span><img src={facebook} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="facebook" /></span>
                             <span onClick={handleGoogleSignUp}><img src={google} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="google" /></span>
                             <img src={twitter} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="twitter" />
-                            <img src={github} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="twitter" />
+                            <span onClick={handleGithubSignUp}><img src={github} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="twitter" /></span>
                         </div>
                     </div>
                     <div className="form-control">
