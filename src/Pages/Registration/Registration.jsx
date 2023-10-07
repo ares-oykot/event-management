@@ -11,7 +11,7 @@ import { AuthContext } from '../../Providers/AuthProviders';
 
 const Registration = () => {
     const [showPassword, setShowPassword] = useState(false);
-
+    const {createUser} = useContext(AuthContext);
     const handleSignUp = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -33,8 +33,13 @@ const Registration = () => {
             return;
         }
 
-        const {} = useContext(AuthContext)
-        console.log(name, url, email, password);
+        createUser(email, password)
+        .then(() => {
+            swal("Nice!!", "User registration is successful", "success");
+        })
+        .catch(error => {
+            swal("Oops!!", `${error.message}`, "error");
+        })
     }
     return (
         <div className="bg-sky-100">

@@ -4,12 +4,14 @@ import facebook from "../../assets/facebook.png"
 import google from "../../assets/google.png"
 import twitter from "../../assets/twitter.png"
 import github from "../../assets/github.png"
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from "react-router-dom";
 import swal from 'sweetalert';
+import { AuthContext } from '../../Providers/AuthProviders';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const { signIn } = useContext(AuthContext);
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -24,9 +26,15 @@ const Login = () => {
             return;
         }
 
+        signIn(email, password)
+            .then(() => {
+                swal("Nice!!", "User sign in successful", "success");
+            })
+            .catch(error => {
+                swal("Oops!!", `${error.message}`, "error");
+            })
 
-
-        console.log(email, password);
+        // console.log(email, password);
     }
     return (
         <div>
