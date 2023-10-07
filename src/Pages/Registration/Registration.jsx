@@ -5,13 +5,15 @@ import google from "../../assets/google.png"
 import twitter from "../../assets/twitter.png"
 import github from "../../assets/github.png"
 import { useContext, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 import { AuthContext } from '../../Providers/AuthProviders';
+import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const {createUser} = useContext(AuthContext);
+    const { createUser, googleSignIn } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleSignUp = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -19,7 +21,7 @@ const Registration = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const accepted = e.target.terms.checked;
-        
+
         if (password.length < 6) {
             swal("Oops!!", "Password should be at least 6 characters", "error");
             return;
@@ -34,12 +36,35 @@ const Registration = () => {
         }
 
         createUser(email, password)
-        .then(() => {
-            swal("Nice!!", "User registration is successful", "success");
-        })
-        .catch(error => {
-            swal("Oops!!", `${error.message}`, "error");
-        })
+            .then((result) => {
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: url,
+                })
+                    .then(() => {
+
+                    })
+                    .catch(() => {
+
+                    });
+                swal("Nice!!", "User registration is successful", "success");
+                navigate("/");
+            })
+            .catch(error => {
+                swal("Oops!!", `${error.message}`, "error");
+            });
+
+
+    }
+    const handleGoogleSignUp = () => {
+        googleSignIn()
+            .then(() => {
+                swal("Nice!!", "User registration is successful", "success");
+                navigate("/");
+            })
+            .catch(error => {
+                swal("Oops!!", `${error.message}`, "error");
+            });
     }
     return (
         <div className="bg-sky-100">
@@ -49,8 +74,8 @@ const Registration = () => {
                     <div className="flex items-center justify-between">
                         <div className="text-3xl font-medium">Sign Up</div>
                         <div className="flex gap-5">
-                            <img src={facebook} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="facebook" />
-                            <img src={google} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="google" />
+                            <span><img src={facebook} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="facebook" /></span>
+                            <span onClick={handleGoogleSignUp}><img src={google} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="google" /></span>
                             <img src={twitter} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="twitter" />
                             <img src={github} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="twitter" />
                         </div>

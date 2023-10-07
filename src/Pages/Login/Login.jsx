@@ -4,14 +4,16 @@ import facebook from "../../assets/facebook.png"
 import google from "../../assets/google.png"
 import twitter from "../../assets/twitter.png"
 import github from "../../assets/github.png"
-import { useContext, useState } from 'react';
-import { Link } from "react-router-dom";
+import { useContext, useState} from 'react';
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 import { AuthContext } from '../../Providers/AuthProviders';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { signIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -29,6 +31,7 @@ const Login = () => {
         signIn(email, password)
             .then(() => {
                 swal("Nice!!", "User sign in successful", "success");
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 swal("Oops!!", `${error.message}`, "error");

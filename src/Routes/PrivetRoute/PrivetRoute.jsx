@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
-import { Navigate} from "react-router-dom";
+import { Navigate, useLocation} from "react-router-dom";
 import { Triangle } from 'react-loader-spinner'
 
 const PrivetRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
+    const location = useLocation();
     if (loading) {
         return <div className="flex justify-center mt-[30vh]">
             <Triangle
@@ -22,7 +23,7 @@ const PrivetRoute = ({ children }) => {
         return children;
     }
     return (
-        <Navigate to="/login"></Navigate>
+        <Navigate to="/login" state={location.pathname}></Navigate>
     );
 };
 
