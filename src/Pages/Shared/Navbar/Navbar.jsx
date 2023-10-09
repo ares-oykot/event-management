@@ -13,7 +13,7 @@ const Navbar = () => {
             })
             .catch(error => {
                 console.log(error.message);
-            })
+            });
     }
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>

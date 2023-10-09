@@ -1,7 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../Shared/Banner/Banner";
 import Service from "../Shared/Service/Service";
-// import Banner from "../../assets/Banner.png"
+import Footer from "../Shared/Footer/Footer";
+import Discount from "../Shared/Discount/Discount";
+import Team from "../Shared/Team/Team";
+
+
+
 const Home = () => {
     const services = useLoaderData();
     return (
@@ -13,6 +18,9 @@ const Home = () => {
                     services.map(service => <Service key={service.id} service={service}></Service>)
                 }
             </div>
+            <Discount></Discount>
+            <Team></Team>
+            <Footer></Footer>
         </div>
     );
 };
