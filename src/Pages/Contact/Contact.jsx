@@ -5,8 +5,8 @@ const Contact = () => {
         <div>
             <div className="">
                 <div className="bg-sky-100">
-                    <div className="w-1/2 mx-auto shadow-lg">
-                    <img className="mx-auto w-full h-96" src={contact} alt="" />
+                    <div className="md:w-1/2 mx-auto shadow-lg">
+                    <img className="mx-auto w-full lg:h-96" src={contact} alt="" />
                         <form className="px-8 card-body">
                             <div className="form-control">
                                 <label className="label">

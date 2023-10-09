@@ -12,8 +12,8 @@ const Home = () => {
     return (
         <div className="mx-auto">
             <div className="relative"><Banner></Banner></div>
-            <h1 className="text-6xl font-black text-indigo-500 italic text-center mt-8 mb-3 shadow-xl pb-2">Our Services</h1>
-            <div className="grid grid-cols-3 gap-6">
+            <h1 className="text-center font-black text-5xl md:text-6xl text-transparent  bg-clip-text bg-gradient-to-r from-sky-400 to-fuchsia-500 mt-5 md:mt-8 mb-3 shadow-xl pb-2">Our Services</h1>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 {
                     services.map(service => <Service key={service.id} service={service}></Service>)
                 }

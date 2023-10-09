@@ -47,7 +47,7 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-end">
                         {
-                            user?.displayName ? <p className="font-bold mr-2 bg-emerald-300 px-2 rounded-sm">{user.displayName}</p>
+                            user?.displayName ? <p className="text-[9px] md:text-base font-bold mr-2 bg-emerald-300 px-2 rounded-sm">{user.displayName}</p>
                             : 
                             ""
                         }

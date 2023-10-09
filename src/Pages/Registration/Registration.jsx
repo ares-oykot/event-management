@@ -78,8 +78,8 @@ const Registration = () => {
     };
     return (
         <div className="bg-sky-100">
-            <div className="w-1/2 mx-auto shadow-xl">
-                <img className='h-[280px] w-full' src={loginBanner} alt="" />
+            <div className="md:w-1/2 mx-auto shadow-xl">
+                <img className='h-[170px] lg:h-[280px] w-full' src={loginBanner} alt="" />
                 <form onSubmit={handleSignUp} className="px-8 card-body">
                     <div className="flex items-center justify-between">
                         <div className="text-3xl font-medium">Sign Up</div>

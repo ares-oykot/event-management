@@ -60,12 +60,12 @@ const Login = () => {
     return (
         <div>
             <div className="bg-sky-100">
-                <div className="w-1/2 mx-auto shadow-lg">
-                    <img className='h-[280px] w-full' src={bannerGif} alt="" />
+                <div className="md:w-1/2 mx-auto shadow-lg">
+                    <img className='lg:h-[280px] w-full' src={bannerGif} alt="" />
                     <form onSubmit={handleLogin} className="px-8 card-body">
                         <div className="flex items-center justify-between">
                             <div className="text-3xl font-medium">Sign In</div>
-                            <div className="flex gap-5">
+                            <div className="flex gap-2 lg:gap-5">
                                 <img src={facebook} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="facebook" />
                                 <span onClick={handleGoogleSignIn}><img src={google} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="google" /></span>
                                 <img src={twitter} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" alt="twitter" />
