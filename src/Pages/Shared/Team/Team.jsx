@@ -1,8 +1,10 @@
 import Marquee from "react-fast-marquee";
 import elon from "../../../assets/elon-musk3.jpg"
-import mark from "../../../assets/zuckerberg.png"
-import jobs from "../../../assets/steve-jobs-.jpg"
-import bil from "../../../assets/BillGates_Headshot.jpg"
+import luis from "../../../assets/LUIS-FONSI5894-scaled.jpg"
+import anne from "../../../assets/original.jpg"
+import daddy from "../../../assets/M7IEEAJEDFDH5IHDXMHC2Z5F3M.jpg"
+import jhon from "../../../assets/john-cena-workout-and-diet-plan.jpg"
+import weeknd from "../../../assets/the-weeknd-gives-huge-boost-to-columbia-economy-with-sold-out-tour-stop-1200x675.jpg"
 const Team = () => {
     return (
         <div className="bg-gradient-to-r from-blue-500 to-lime-500 text-indigo-600 pt-8 pb-1 rounded mb-10">
@@ -15,27 +17,27 @@ const Team = () => {
                     <p className="text-xs text-amber-400">He is the owner of this company.</p>
                 </div>
                 <div className="w-40 mr-20">
-                    <img className="mx-auto w-36 h-36 hover:w-40 hover:h-40 duration-300 rounded-full" src={mark} alt="" />
+                    <img className="mx-auto w-36 h-36 hover:w-40 hover:h-40 duration-300 rounded-full" src={luis} alt="" />
                     <h4 className="text-xl text-blue-800">Henry</h4>
                     <p className="text-xs text-amber-400">He is engaged during trade show events.</p>
                 </div>
                 <div className="w-40 mr-20">
-                    <img className="mx-auto w-36 h-36 hover:w-40 hover:h-40 duration-300 rounded-full" src={jobs} alt="" />
+                    <img className="mx-auto w-36 h-36 hover:w-40 hover:h-40 duration-300 rounded-full" src={anne} alt="" />
                     <h4 className="text-xl text-blue-800">John</h4>
                     <p className="text-xs text-amber-400">He manages sound system related work.</p>
                 </div>
                 <div className="w-40 mr-20">
-                    <img className="mx-auto w-36 h-36 hover:w-40 hover:h-40 duration-300 rounded-full" src={bil} alt="" />
+                    <img className="mx-auto w-36 h-36 hover:w-40 hover:h-40 duration-300 rounded-full" src={daddy} alt="" />
                     <h4 className="text-xl text-blue-800">Michael</h4>
                     <p className="text-xs text-amber-400">He is the electrician of this company.</p>
                 </div>
                 <div className="w-40 mr-20">
-                    <img className="mx-auto w-36 h-36 hover:w-40 hover:h-40 duration-300 rounded-full" src={bil} alt="" />
+                    <img className="mx-auto w-36 h-36 hover:w-40 hover:h-40 duration-300 rounded-full" src={jhon} alt="" />
                     <h4 className="text-xl text-blue-800">Joseph</h4>
                     <p className="text-xs text-amber-400">He is a doctor, he treats people.</p>
                 </div>
                 <div className="w-40 mr-20">
-                    <img className="mx-auto w-36 h-36 hover:w-40 hover:h-40 duration-300 rounded-full" src={bil} alt="" />
+                    <img className="mx-auto w-36 h-36 hover:w-40 hover:h-40 duration-300 rounded-full" src={weeknd} alt="" />
                     <h4 className="text-xl text-blue-800">Anthony</h4>
                     <p className="text-xs text-amber-400">he is the manager of our company.</p>
                 </div>
