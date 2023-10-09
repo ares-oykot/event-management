@@ -16,7 +16,7 @@ const Discount = () => {
                 <h1 className="text-center font-black text-6xl text-transparent  bg-clip-text bg-gradient-to-r from-sky-400 to-fuchsia-500">OUR CURRENT OFFER</h1>
                 <h5 className="text-xl my-2 text-emerald-300 text-center font-semibold">We currently have <span className="text-lime-400 font-black">30%</span> discount on these services</h5>
                 <div className="flex px-4 gap-4 justify-between">
-                    <div data-aos="flip-left" className="flex w-full gap-2 border rounded p-3 bg-gradient-to-r from-purple-600 to-blue-600">
+                    <div data-aos="flip-right" className="flex w-full gap-2 border rounded p-3 bg-gradient-to-r from-purple-600 to-blue-600">
                         <img className="w-52 rounded h-36" src="https://i.ibb.co/SQkj4Gs/Trade.jpg" alt="" />
                         <div className="text-black text-sm">
                             <h4 className="text-indigo-600 text-base font-medium bg-gradient-to-r from-lime-300 to-orange-300 rounded px-1">Trade Shows</h4>
@@ -28,7 +28,7 @@ const Discount = () => {
                             </div>
                         </div>
                     </div>
-                    <div data-aos="flip-left" className="flex w-full gap-2 rounded border p-3 bg-gradient-to-r from-purple-600 to-blue-600">
+                    <div data-aos="flip-down" className="flex w-full gap-2 rounded border p-3 bg-gradient-to-r from-purple-600 to-blue-600">
                         <img className="w-52 rounded h-36" src="https://i.ibb.co/NTbbg6L/Product-Launches.jpg" alt="" />
                         <div className=" text-sm">
                             <h4 className="text-base bg-gradient-to-r from-lime-300 to-orange-300 text-indigo-600 px-1 rounded font-medium">Product Launches</h4>

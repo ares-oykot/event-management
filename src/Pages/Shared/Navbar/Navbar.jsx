@@ -1,6 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import Logo from "../../../assets/logo-removebg-preview.png"
-import { useContext} from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import profile from "../../../assets/user.png"
 
@@ -11,14 +11,16 @@ const Navbar = () => {
             .then(() => {
 
             })
-            .catch(error => {
-                console.log(error.message);
+            .catch(() => {
+                
             });
     }
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
         <li><NavLink to="/registration">Registration</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/contact">Contact</NavLink></li>
     </>
     return (
         <div>
@@ -45,18 +47,28 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-end">
                         {
-                            user ? <button onClick={handleSignOut} className=" bg-black text-white px-6 py-2 rounded-sm">Sign Out</button>
-                                :
-                                <Link to="/login"><button className=" bg-black text-white px-6 py-2 rounded-sm">Login</button></Link>
+                            user?.displayName ? <p className="font-bold mr-2 bg-emerald-300 px-2 rounded-sm">{user.displayName}</p>
+                            : 
+                            ""
                         }
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
+                        <div className="dropdown dropdown-hover">
+                            
+                            <label tabIndex={0} className="">
+                                <div className="w-10">
+                                    {
+                                        user?.photoURL ? <img className="rounded-full" src={user?.photoURL} /> :
+                                            <img className="rounded-full" src={profile} />
+                                    }
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded p-1 w-32  right-0">
                                 {
-                                    user?.photoURL ? <img src={user?.photoURL} /> :
-                                    <img src={profile} />
+                                    user ? <button onClick={handleSignOut} className=" bg-emerald-600 w-full text-white px-6 py-2 rounded-sm">Sign Out</button>
+                                        :
+                                        <Link to="/login"><button className=" bg-emerald-600 w-full text-white px-6 py-2 rounded-sm">Login</button></Link>
                                 }
-                            </div>
-                        </label>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

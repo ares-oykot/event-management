@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { PiCurrencyDollarBold } from 'react-icons/pi';
 import { Link } from "react-router-dom";
 const Service = ({ service }) => {
@@ -33,4 +34,7 @@ const Service = ({ service }) => {
     );
 };
 
+Service.propTypes = {
+    service: PropTypes.object
+}
 export default Service;

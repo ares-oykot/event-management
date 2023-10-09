@@ -4,7 +4,6 @@ const CardDetails = () => {
     const { id } = useParams();
     const AllData = useLoaderData();
     const data = AllData.find(data => data.id == id);
-    console.log(data);
     const { title, image, price, description } = data || {};
     return (
         <div>

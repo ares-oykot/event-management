@@ -1,5 +1,5 @@
 import { AiFillEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import loginBanner from "../../assets/beach.jpg"
+import loginBanner from "../../assets/6O2V.gif"
 import facebook from "../../assets/facebook.png"
 import google from "../../assets/google.png"
 import twitter from "../../assets/twitter.png"
@@ -79,7 +79,7 @@ const Registration = () => {
     return (
         <div className="bg-sky-100">
             <div className="w-1/2 mx-auto shadow-xl">
-                <img src={loginBanner} alt="" />
+                <img className='h-[280px] w-full' src={loginBanner} alt="" />
                 <form onSubmit={handleSignUp} className="px-8 card-body">
                     <div className="flex items-center justify-between">
                         <div className="text-3xl font-medium">Sign Up</div>

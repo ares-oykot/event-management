@@ -1,6 +1,5 @@
 import { AiFillEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import loginBanner from "../../assets/beach1.jpg"
-import bannerGif from "../../assets/6O2V.gif"
+import bannerGif from "../../assets/beach.jpg"
 import facebook from "../../assets/facebook.png"
 import google from "../../assets/google.png"
 import twitter from "../../assets/twitter.png"
