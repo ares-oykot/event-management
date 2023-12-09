@@ -53,8 +53,6 @@ const Registration = () => {
             .catch(error => {
                 swal("Oops!!", `${error.message}`, "error");
             });
-
-
     }
     const handleGoogleSignUp = () => {
         googleSignIn()
@@ -118,7 +116,7 @@ const Registration = () => {
                             <span className="absolute right-3 bottom-3 cursor-pointer text-lg" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <AiFillEye></AiFillEye> : <AiOutlineEyeInvisible></AiOutlineEyeInvisible>}</span>
                         </div>
                         <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a> 
                         </label>
                         <div className="ml-1 my-2">
                             <input type="checkbox" name="terms" id="terms" />
